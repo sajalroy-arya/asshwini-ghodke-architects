@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (menuBtn && mobileNav) {
     const closeMobileMenu = () => {
       menuBtn.setAttribute('aria-expanded', 'false');
-      mobileNav.classList.remove('open');
+      mobileNav.classList.remove('is-open');
       document.body.style.overflow = '';
     };
 
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
         closeMobileMenu();
       } else {
         menuBtn.setAttribute('aria-expanded', 'true');
-        mobileNav.classList.add('open');
+        mobileNav.classList.add('is-open');
         document.body.style.overflow = 'hidden';
       }
     });
