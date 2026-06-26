@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Asshwini Ghodke Architects Interiors & Associates - Award-winning luxury residential, villa, and commercial architecture and interior design firm in Indore, Madhya Pradesh.">
-  <title>Asshwini Ghodke Architects Interiors & Associates | Luxury Architecture & Interiors Indore</title>
+  <meta name="description" content="Asshwini Ghodke Architects Interiors & Associates - Immersive premium architecture and interior design art gallery. Bespoke luxury villas, apartments, and cafes.">
+  <title>Asshwini Ghodke Architects Interiors & Associates | New Age Architecture Gallery</title>
   
-  <!-- Preload fonts to avoid layout shifts -->
+  <!-- Preload new-age Syne and Outfit fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
   
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="style.css">
   
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 font-family=%22serif%22 fill=%22%23B38A5D%22>A</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 font-family=%22sans-serif%22 font-weight=%22bold%22 fill=%22%232575fc%22>A</text></svg>">
 
-  <!-- Schema.org JSON-LD Markup for SEO -->
+  <!-- Schema.org JSON-LD LocalBusiness Markup -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -40,879 +40,803 @@
       "latitude": 22.707073,
       "longitude": 75.899478
     },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday"
-      ],
-      "opens": "10:00",
-      "closes": "19:00"
-    },
-    "sameAs": [
-      "https://www.instagram.com/asshwinighodke_architects",
-      "https://www.facebook.com/asshwinighodke"
-    ],
     "priceRange": "$$$$"
   }
   </script>
 </head>
 <body>
 
-  <!-- Custom Premium Cursor (Desktop Only) -->
-  <div class="custom-cursor" aria-hidden="true" id="customCursor"></div>
+  <!-- Glowing Spotlight Custom Cursor (Desktop Only) -->
+  <div class="spotlight-cursor" aria-hidden="true" id="spotlightCursor"></div>
 
-  <!-- Accessibility Skip Link -->
+  <!-- Ambient Light Orbs and Cove Beams -->
+  <div class="ambient-glow-container" aria-hidden="true">
+    <div class="ambient-orb orb-icy" id="orbIcy"></div>
+    <div class="ambient-orb orb-royal" id="orbRoyal"></div>
+    <div class="ambient-orb orb-green" id="orbGreen"></div>
+    <div class="light-cove-beam" id="coveBeam"></div>
+  </div>
+
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- Sticky Transparent Header -->
-  <header class="site-header" id="siteHeader">
+  <!-- Floating Glassmorphic Sticky Header -->
+  <header class="glass-header" id="siteHeader">
     <div class="header-container">
       <a href="#" class="brand-logo" aria-label="Asshwini Ghodke Architects homepage">
-        <span class="logo-serif">A.G</span>
-        <span class="logo-text">Architects & Associates</span>
+        <span class="logo-bold">A.G</span>
+        <span class="logo-sub">STUDIO</span>
       </a>
 
-      <!-- Desktop Navigation -->
-      <nav class="desktop-nav" aria-label="Desktop navigation">
+      <!-- Desktop Links -->
+      <nav class="desktop-nav" aria-label="Desktop menu">
         <ul>
-          <li><a href="#projects">Projects</a></li>
+          <li><a href="#projects">Gallery</a></li>
           <li><a href="#about">Philosophy</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#process">Process</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#contact">Consultation</a></li>
         </ul>
       </nav>
 
-      <!-- CTA (Desktop Only) -->
       <div class="header-cta-wrapper">
-        <a href="#contact" class="btn btn-nav btn-bronze">Book Consultation</a>
+        <a href="#contact" class="btn-glass btn-nav">Book Gallery Tour</a>
       </div>
 
-      <!-- Mobile Menu Toggle Button -->
-      <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="mobileNavigation">
+      <!-- Mobile Hamburger Button (Strictly >=48px) -->
+      <button class="mobile-menu-toggle" id="menuToggle" aria-label="Open Navigation Menu" aria-expanded="false" aria-controls="mobileNavigation">
         <span class="bar bar-1"></span>
         <span class="bar bar-2"></span>
       </button>
     </div>
   </header>
 
-  <!-- Mobile Fullscreen Navigation Overlay -->
-  <nav class="mobile-nav" id="mobileNavigation" aria-label="Mobile navigation" aria-hidden="true">
-    <div class="mobile-nav-container">
+  <!-- Mobile Menu Overlay -->
+  <nav class="mobile-nav-overlay" id="mobileNavigation" aria-hidden="true">
+    <div class="mobile-nav-content">
       <ul class="mobile-nav-links">
-        <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
-        <li><a href="#about" class="mobile-nav-link">Philosophy</a></li>
-        <li><a href="#services" class="mobile-nav-link">Services</a></li>
-        <li><a href="#process" class="mobile-nav-link">Process</a></li>
-        <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+        <li><a href="#projects" class="mobile-link">01 &nbsp; Gallery</a></li>
+        <li><a href="#about" class="mobile-link">02 &nbsp; Philosophy</a></li>
+        <li><a href="#services" class="mobile-link">03 &nbsp; Services</a></li>
+        <li><a href="#process" class="mobile-link">04 &nbsp; Process</a></li>
+        <li><a href="#contact" class="mobile-link">05 &nbsp; Contact</a></li>
       </ul>
-      <div class="mobile-nav-footer">
-        <a href="#contact" class="btn btn-bronze btn-full mobile-nav-cta">Book Consultation</a>
-        <div class="mobile-nav-details">
-          <p class="nav-phone">+91 79879 03535</p>
-          <p class="nav-location">Indore, Madhya Pradesh</p>
-        </div>
+      <div class="mobile-nav-info">
+        <a href="#contact" class="btn-glass btn-full mobile-cta">Schedule Consultation</a>
+        <p class="mobile-studio-details">+91 79879 03535 &bull; Indore</p>
       </div>
     </div>
   </nav>
 
   <main id="main-content">
 
-    <!-- 1. HERO SECTION -->
-    <section class="hero-section" id="hero" aria-label="Introduction">
+    <!-- ROOM 1: HERO (Icy Blue / Glassmorphic Showcase) -->
+    <section class="showroom-room room-hero" id="hero" data-theme="theme-icy" aria-label="Digital Showroom Entrance">
       <div class="hero-bg-container">
-        <img src="assets/hero-bg.png" alt="Luxury minimal concrete architecture villa exterior" class="hero-parallax-img" id="heroParallax">
-        <div class="hero-overlay"></div>
+        <img src="assets/hero-bg.png" alt="Luxury minimalist concrete building outline" class="hero-parallax-img" id="heroParallax">
+        <div class="hero-tint"></div>
       </div>
-      <div class="hero-content">
-        <h1 class="hero-title reveal-text">
-          Designing Spaces.<br>
-          <span class="text-serif italic font-light">Building Experiences.</span>
-        </h1>
-        <p class="hero-desc reveal-fade-delay">
-          Award-winning architecture and interior solutions crafted for homes, villas, hospitality and commercial spaces across India.
-        </p>
-        <div class="hero-actions reveal-fade-delay">
-          <a href="#contact" class="btn btn-bronze">Book Consultation</a>
-          <a href="#projects" class="btn btn-outline">Explore Projects</a>
+      
+      <div class="hero-floating-box-wrapper">
+        <div class="glass-card hero-glass-card reveal-fade">
+          <span class="badge-floating">Architectural Gallery</span>
+          <h1 class="hero-main-title reveal-text">
+            Designing Spaces.<br>
+            <span class="highlight-text">Building Experiences.</span>
+          </h1>
+          <p class="hero-paragraph reveal-fade-delay">
+            Award-winning architecture and interior solutions crafted for homes, villas, hospitality and commercial spaces across India.
+          </p>
+          <div class="hero-button-actions reveal-fade-delay">
+            <a href="#contact" class="btn btn-primary-glowing">Book Consultation</a>
+            <a href="#projects" class="btn btn-outline-glass">Explore Projects</a>
+          </div>
         </div>
       </div>
-      <div class="hero-scroll-indicator" aria-hidden="true">
-        <span class="scroll-line"></span>
+
+      <!-- Trust Strip embedded as a floating compact bar (removes vertically long template block) -->
+      <div class="floating-trust-bar reveal-fade-delay">
+        <div class="trust-pill">⭐ 4.9 Rating (120+ Reviews)</div>
+        <div class="trust-separator"></div>
+        <div class="trust-pill">Luxury Residential</div>
+        <div class="trust-separator"></div>
+        <div class="trust-pill">Hospitality Specialists</div>
+        <div class="trust-separator"></div>
+        <div class="trust-pill">Located in Indore</div>
       </div>
     </section>
 
-    <!-- 2. TRUST STRIP -->
-    <section class="trust-strip" aria-label="Key Achievements">
-      <div class="container trust-container">
-        <div class="trust-item">
-          <span class="trust-number"><span class="star-rating">★</span> 4.9 Rating</span>
-          <span class="trust-label">120+ Google Reviews</span>
-        </div>
-        <div class="trust-divider" aria-hidden="true"></div>
-        <div class="trust-item">
-          <span class="trust-number">Luxury Residential</span>
-          <span class="trust-label">High-End Villas & Apartments</span>
-        </div>
-        <div class="trust-divider" aria-hidden="true"></div>
-        <div class="trust-item">
-          <span class="trust-number">Hospitality & Office</span>
-          <span class="trust-label">Commercial & Hotels</span>
-        </div>
-        <div class="trust-divider" aria-hidden="true"></div>
-        <div class="trust-item">
-          <span class="trust-number">Indore Based</span>
-          <span class="trust-label">Refurbishment & Civil Planning</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- 3. FEATURED PROJECTS -->
-    <section class="projects-section" id="projects">
-      <div class="container">
+    <!-- ROOM 2: PORTFOLIO SHOWCASE (Midnight Slate / Granite Texture Room) -->
+    <section class="showroom-room room-projects" id="projects" data-theme="theme-slate" aria-label="Featured Works Grid">
+      <div class="container compact-container">
         <div class="section-header reveal-fade">
-          <span class="section-subtitle">Selected Portfolios</span>
-          <h2 class="section-title">Featured Projects</h2>
+          <span class="section-room-num">Room 01</span>
+          <h2 class="section-title-art">Selected Portfolios</h2>
+          <p class="section-desc-minimal">Artistic spaces designed with structural clarity and curated materials.</p>
         </div>
 
-        <div class="projects-grid">
-          <!-- Project 1 (Large Card) -->
-          <article class="project-card reveal-fade card-large">
-            <div class="project-img-wrapper">
-              <img src="assets/project-residential.png" loading="lazy" alt="Modern contemporary luxury villa facade in Indore" class="project-img">
-              <div class="project-card-overlay">
-                <span class="btn-project-view">View Project</span>
+        <!-- Compact Horizontal Scroll Gallery on Mobile, Grid on Desktop (Eliminates vertical scroll fatigue) -->
+        <div class="portfolio-slider-wrapper reveal-fade">
+          <div class="portfolio-grid-masonry">
+            <!-- Project 1 (Villas - Royal Blue Accents) -->
+            <article class="project-glass-card color-blue-glow">
+              <div class="project-card-image-slot">
+                <img src="assets/project-residential.png" loading="lazy" alt="Contemporary luxury villa Facade in Indore" class="project-art-img">
+                <span class="project-material-badge">Marble & Steel</span>
               </div>
-            </div>
-            <div class="project-info">
-              <span class="project-meta">Architecture / Villa &bull; Indore</span>
-              <h3 class="project-card-title">The Ivory Courtyard Villa</h3>
-            </div>
-          </article>
+              <div class="project-card-details">
+                <span class="project-category-tag">Architecture &bull; Villa</span>
+                <h3 class="project-title-link">The Ivory Courtyard Villa</h3>
+                <a href="#contact" class="btn-project-action">View Showcase <span>&rarr;</span></a>
+              </div>
+            </article>
 
-          <!-- Project 2 -->
-          <article class="project-card reveal-fade">
-            <div class="project-img-wrapper">
-              <img src="assets/project-apartment.png" loading="lazy" alt="Minimal luxury penthouse living room design" class="project-img">
-              <div class="project-card-overlay">
-                <span class="btn-project-view">View Project</span>
+            <!-- Project 2 (Penthouse - Light Wood Accents) -->
+            <article class="project-glass-card color-green-glow">
+              <div class="project-card-image-slot">
+                <img src="assets/project-apartment.png" loading="lazy" alt="Minimalist luxury penthouse living room design" class="project-art-img">
+                <span class="project-material-badge">Oak Veneer</span>
               </div>
-            </div>
-            <div class="project-info">
-              <span class="project-meta">Residential Interiors &bull; Indore</span>
-              <h3 class="project-card-title">Skyline Minimal Penthouse</h3>
-            </div>
-          </article>
+              <div class="project-card-details">
+                <span class="project-category-tag">Residential Interiors</span>
+                <h3 class="project-title-link">Skyline Minimal Penthouse</h3>
+                <a href="#contact" class="btn-project-action">View Showcase <span>&rarr;</span></a>
+              </div>
+            </article>
 
-          <!-- Project 3 -->
-          <article class="project-card reveal-fade">
-            <div class="project-img-wrapper">
-              <img src="assets/project-commercial.png" loading="lazy" alt="Sleek architecture corporate workspace" class="project-img">
-              <div class="project-card-overlay">
-                <span class="btn-project-view">View Project</span>
+            <!-- Project 3 (HQ - Granite Accents) -->
+            <article class="project-glass-card color-slate-glow">
+              <div class="project-card-image-slot">
+                <img src="assets/project-commercial.png" loading="lazy" alt="Sleek corporate workspace interior" class="project-art-img">
+                <span class="project-material-badge">Granite Slate</span>
               </div>
-            </div>
-            <div class="project-info">
-              <span class="project-meta">Office Design &bull; Indore</span>
-              <h3 class="project-card-title">The Monolith Corporate HQ</h3>
-            </div>
-          </article>
+              <div class="project-card-details">
+                <span class="project-category-tag">Office Design &bull; Indore</span>
+                <h3 class="project-title-link">The Monolith Corporate HQ</h3>
+                <a href="#contact" class="btn-project-action">View Showcase <span>&rarr;</span></a>
+              </div>
+            </article>
 
-          <!-- Project 4 -->
-          <article class="project-card reveal-fade">
-            <div class="project-img-wrapper">
-              <img src="assets/project-cafe.png" loading="lazy" alt="Aesthetic architecture cafe interior with moody lighting" class="project-img">
-              <div class="project-card-overlay">
-                <span class="btn-project-view">View Project</span>
+            <!-- Project 4 (Cafe - Royal Amber Accents) -->
+            <article class="project-glass-card color-red-glow">
+              <div class="project-card-image-slot">
+                <img src="assets/project-cafe.png" loading="lazy" alt="Aesthetic architecture cafe interior" class="project-art-img">
+                <span class="project-material-badge">Terrazzo & Brass</span>
               </div>
-            </div>
-            <div class="project-info">
-              <span class="project-meta">Commercial &bull; Cafes</span>
-              <h3 class="project-card-title">Amber Architectural Cafe</h3>
-            </div>
-          </article>
+              <div class="project-card-details">
+                <span class="project-category-tag">Commercial &bull; Cafes</span>
+                <h3 class="project-title-link">Amber Architectural Cafe</h3>
+                <a href="#contact" class="btn-project-action">View Showcase <span>&rarr;</span></a>
+              </div>
+            </article>
 
-          <!-- Project 5 -->
-          <article class="project-card reveal-fade card-large">
-            <div class="project-img-wrapper">
-              <img src="assets/project-hotel.png" loading="lazy" alt="Boutique luxury resort pool suite bedroom" class="project-img">
-              <div class="project-card-overlay">
-                <span class="btn-project-view">View Project</span>
+            <!-- Project 5 (Hotel - Pool View) -->
+            <article class="project-glass-card color-blue-glow card-wide-span">
+              <div class="project-card-image-slot wide-aspect">
+                <img src="assets/project-hotel.png" loading="lazy" alt="Boutique resort bedroom" class="project-art-img">
+                <span class="project-material-badge">Sandstone</span>
               </div>
-            </div>
-            <div class="project-info">
-              <span class="project-meta">Hospitality &bull; Resorts</span>
-              <h3 class="project-card-title">Verdant Retreat Boutique Hotel</h3>
-            </div>
-          </article>
+              <div class="project-card-details">
+                <span class="project-category-tag">Hospitality &bull; Resorts</span>
+                <h3 class="project-title-link">Verdant Retreat Boutique Hotel</h3>
+                <a href="#contact" class="btn-project-action">View Showcase <span>&rarr;</span></a>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- 4. ABOUT SECTION -->
-    <section class="about-section" id="about">
-      <div class="container">
-        <div class="about-layout">
-          <div class="about-visual reveal-fade">
-            <div class="editorial-image-wrapper">
-              <img src="assets/about-portrait.png" loading="lazy" alt="Editorial design workspace flatlay featuring blueprints and instruments" class="about-portrait-img">
+    <!-- ROOM 3: THE ART PHILOSOPHY (Oak Wood Planks & Royal Green Room) -->
+    <section class="showroom-room room-about wood-texture-bg" id="about" data-theme="theme-green" aria-label="Design Philosophy">
+      <div class="wood-veneer-line"></div>
+      <div class="container compact-container">
+        <div class="about-grid-newage">
+          
+          <div class="about-visual-showcase reveal-fade">
+            <!-- Floating glass layer on top of editorial picture -->
+            <div class="layered-art-frame">
+              <img src="assets/about-portrait.png" loading="lazy" alt="Architectural drafting instruments layout" class="about-portrait-img">
+              <div class="floating-glass-label">
+                <span class="label-heading">Philosophy</span>
+                <span class="label-sub">Timeless over Trendy</span>
+              </div>
             </div>
           </div>
-          <div class="about-content reveal-fade">
-            <span class="section-subtitle">Our Philosophy</span>
-            <h2 class="about-headline">Creating timeless architecture that reflects how people truly live.</h2>
-            <div class="philosophy-text">
-              <p>At Asshwini Ghodke Architects Interiors & Associates, we believe that space should tell a story. Architecture is not merely the assembly of materials, but the choreographing of light, shadow, and movement.</p>
-              <p>Based in Indore, our practice merges rigorous intellectual research with hands-on craft. We design customized environments that balance artistic vision with functional clarity.</p>
-            </div>
-            <div class="about-pillars">
-              <div class="pillar">
+
+          <div class="about-content-showcase reveal-fade">
+            <span class="section-room-num">Room 02</span>
+            <h2 class="showroom-heading">Timeless architecture reflecting human movement.</h2>
+            <p class="philosophy-intro-text">We choreograph light, shadows, and natural elements. Space planning is structured around ergonomics, craft, and material truths.</p>
+            
+            <!-- Pillars configured as horizontal micro-cards (eliminates vertically long lists) -->
+            <div class="pillars-row-layout">
+              <div class="pillar-card-glass">
+                <div class="pillar-bullet"></div>
                 <h4>Innovation</h4>
-                <p>Pushing material and structural boundaries to deliver custom architectural identities.</p>
+                <p>Pushing structural limits to achieve unique site elevations.</p>
               </div>
-              <div class="pillar">
+              <div class="pillar-card-glass">
+                <div class="pillar-bullet"></div>
                 <h4>Functionality</h4>
-                <p>Space planned ergonomically around your lifestyle, ensuring seamless daily experiences.</p>
+                <p>Refining spatial circulation for seamless daily experience.</p>
               </div>
-              <div class="pillar">
+              <div class="pillar-card-glass">
+                <div class="pillar-bullet"></div>
                 <h4>Budget-Conscious</h4>
-                <p>Meticulous documentation and quantity surveying to align luxury design with financial parameters.</p>
+                <p>Precise quantity surveying to deliver luxury without waste.</p>
               </div>
-              <div class="pillar">
-                <h4>Premium Execution</h4>
-                <p>Direct oversight and turnkey supervision to ensure absolute fidelity to the blueprints.</p>
+              <div class="pillar-card-glass">
+                <div class="pillar-bullet"></div>
+                <h4>Supervised Craft</h4>
+                <p>Supervising detail execution directly at the construction site.</p>
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- 5. SERVICES SECTION -->
-    <section class="services-section" id="services">
-      <div class="container">
+    <!-- ROOM 4: SERVICES & ARCHITECTURAL ACCENTS (Granite/Slate & Royal Blue Room) -->
+    <section class="showroom-room room-services" id="services" data-theme="theme-blue" aria-label="Services Provided">
+      <div class="container compact-container">
         <div class="section-header reveal-fade">
-          <span class="section-subtitle">Our Expertise</span>
-          <h2 class="section-title">Architectural & Interior Services</h2>
+          <span class="section-room-num">Room 03</span>
+          <h2 class="section-title-art">Services Provided</h2>
+          <p class="section-desc-minimal">Our disciplines scale from initial sketches to structural handover.</p>
         </div>
 
-        <div class="services-grid">
+        <!-- 3x3 Grid of Compact Glass Cards -->
+        <div class="services-grid-newage">
           <!-- Service 1 -->
-          <div class="service-card reveal-fade">
-            <div class="service-icon" aria-hidden="true">
+          <div class="service-glass-card reveal-fade">
+            <div class="service-icon-wrapper" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
               </svg>
             </div>
-            <h3 class="service-card-title">Residential Interiors</h3>
-            <p class="service-card-desc">Bespoke home interiors designed for modern comfort, blending exquisite detailing with curated textures.</p>
-            <div class="service-hover-indicator" aria-hidden="true"></div>
+            <h3 class="service-card-heading">Residential Interiors</h3>
+            <p class="service-card-paragraph">Bespoke home interiors displaying warm minimalism and linen textures.</p>
           </div>
 
           <!-- Service 2 -->
-          <div class="service-card reveal-fade">
-            <div class="service-icon" aria-hidden="true">
+          <div class="service-glass-card reveal-fade">
+            <div class="service-icon-wrapper" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-.778.099-1.533.284-2.253" />
               </svg>
             </div>
-            <h3 class="service-card-title">Luxury Villas</h3>
-            <p class="service-card-desc">Custom high-end estate and villa designs displaying majestic elevations and integrated landscape zones.</p>
-            <div class="service-hover-indicator" aria-hidden="true"></div>
+            <h3 class="service-card-heading">Luxury Villas</h3>
+            <p class="service-card-paragraph">Majestic heights, double-height volumes, and courtyard estate integrations.</p>
           </div>
 
           <!-- Service 3 -->
-          <div class="service-card reveal-fade">
-            <div class="service-icon" aria-hidden="true">
+          <div class="service-glass-card reveal-fade">
+            <div class="service-icon-wrapper" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 9l6-6m0 0l6 6m-6-6v12m0 3H3.75a.75.75 0 01-.75-.75V5.25a.75.75 0 01.75-.75H9" />
               </svg>
             </div>
-            <h3 class="service-card-title">Architecture</h3>
-            <p class="service-card-desc">Structural design concept, building planning, spatial layout, and contemporary facades that stand out.</p>
-            <div class="service-hover-indicator" aria-hidden="true"></div>
+            <h3 class="service-card-heading">Architecture</h3>
+            <p class="service-card-paragraph">Building plans, engineering blueprints, layouts, and contemporary elevations.</p>
           </div>
 
           <!-- Service 4 -->
-          <div class="service-card reveal-fade">
-            <div class="service-icon" aria-hidden="true">
+          <div class="service-glass-card reveal-fade">
+            <div class="service-icon-wrapper" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016c.896 0 1.7-.393 2.25-1.015a3.001 3.001 0 003.75.614m-16.5 0a3.004 3.004 0 01-.621-4.72L4.318 3.44A1.5 1.5 0 015.378 3h13.243a1.5 1.5 0 011.06.44l1.19 1.189a3 3 0 01-.621 4.72M6.75 18h3.75a.75.75 0 00.75-.75V13.5a.75.75 0 00-.75-.75H6.75a.75.75 0 00-.75.75v3.75c0 .414.336.75.75.75z" />
               </svg>
             </div>
-            <h3 class="service-card-title">Commercial Interiors</h3>
-            <p class="service-card-desc">High-traffic retail, showroom, and flagship store layouts tailored to enhance customer interaction.</p>
-            <div class="service-hover-indicator" aria-hidden="true"></div>
+            <h3 class="service-card-heading">Commercial Interiors</h3>
+            <p class="service-card-paragraph">High-traffic showroom, retail store, and gallery configurations optimized for sales.</p>
           </div>
 
           <!-- Service 5 -->
-          <div class="service-card reveal-fade">
-            <div class="service-icon" aria-hidden="true">
+          <div class="service-glass-card reveal-fade">
+            <div class="service-icon-wrapper" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699-2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.5 4.5 0 00-4.062-4.062m4.062 4.062a15.11 15.11 0 012.39-2.24" />
               </svg>
             </div>
-            <h3 class="service-card-title">Hotels & Resorts</h3>
-            <p class="service-card-desc">Sophisticated hospitality architecture, creating escape-oriented environments for premium guests.</p>
-            <div class="service-hover-indicator" aria-hidden="true"></div>
+            <h3 class="service-card-heading">Hotels & Resorts</h3>
+            <p class="service-card-paragraph">Escape architecture and luxury bedroom suites designed to evoke serenity.</p>
           </div>
 
           <!-- Service 6 -->
-          <div class="service-card reveal-fade">
-            <div class="service-icon" aria-hidden="true">
+          <div class="service-glass-card reveal-fade">
+            <div class="service-icon-wrapper" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            <h3 class="service-card-title">Cafe Design</h3>
-            <p class="service-card-desc">Warm, aesthetic, and photogenic cafe spaces designed for gathering, with unique material play.</p>
-            <div class="service-hover-indicator" aria-hidden="true"></div>
+            <h3 class="service-card-heading">Cafe Design</h3>
+            <p class="service-card-paragraph">Bespoke lighting layouts and cozy textures establishing photogenic destinations.</p>
           </div>
 
           <!-- Service 7 -->
-          <div class="service-card reveal-fade">
-            <div class="service-icon" aria-hidden="true">
+          <div class="service-glass-card reveal-fade">
+            <div class="service-icon-wrapper" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
               </svg>
             </div>
-            <h3 class="service-card-title">Office Spaces</h3>
-            <p class="service-card-desc">Productive architectural layout designs focused on collaboration, ergonomics, and branding integrity.</p>
-            <div class="service-hover-indicator" aria-hidden="true"></div>
+            <h3 class="service-card-heading">Office Spaces</h3>
+            <p class="service-card-paragraph">Ergonomic structural designs balancing collaborative areas and quiet offices.</p>
           </div>
 
           <!-- Service 8 -->
-          <div class="service-card reveal-fade">
-            <div class="service-icon" aria-hidden="true">
+          <div class="service-glass-card reveal-fade">
+            <div class="service-icon-wrapper" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M10.34 15.84c-.68-.34-1.34-.84-1.84-1.34a2.25 2.25 0 010-3.18l4.5-4.5a2.25 2.25 0 013.18 0l4.5 4.5a2.25 2.25 0 010 3.18l-4.5 4.5a2.25 2.25 0 01-3.18 0l-2.66-2.66" />
               </svg>
             </div>
-            <h3 class="service-card-title">Civil Planning</h3>
-            <p class="service-card-desc">Detailed structural blueprints, land zoning, municipal coordination, and utility planning.</p>
-            <div class="service-hover-indicator" aria-hidden="true"></div>
+            <h3 class="service-card-heading">Civil Planning</h3>
+            <p class="service-card-paragraph">Zoning analyses, municipal clearance compliance, and foundation engineering details.</p>
           </div>
 
           <!-- Service 9 -->
-          <div class="service-card reveal-fade">
-            <div class="service-icon" aria-hidden="true">
+          <div class="service-glass-card reveal-fade">
+            <div class="service-icon-wrapper" aria-hidden="true">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
               </svg>
             </div>
-            <h3 class="service-card-title">Refurbishment</h3>
-            <p class="service-card-desc">Bespoke transformation of heritage or dated civil envelopes into hyper-modern luxury statements.</p>
-            <div class="service-hover-indicator" aria-hidden="true"></div>
+            <h3 class="service-card-heading">Refurbishment</h3>
+            <p class="service-card-paragraph">Converting old concrete layouts into modern, luxurious statements.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 6. DESIGN PROCESS -->
-    <section class="process-section" id="process">
-      <div class="container">
+    <!-- ROOM 5: THE WORKFLOW METHODOLOGY (Cove Light Progress & Glass Timeline) -->
+    <section class="showroom-room room-process" id="process" data-theme="theme-icy" aria-label="Development Process">
+      <div class="container compact-container">
         <div class="section-header reveal-fade">
-          <span class="section-subtitle">Our Method</span>
-          <h2 class="section-title">The Design Process</h2>
+          <span class="section-room-num">Room 04</span>
+          <h2 class="section-title-art">Our Methodology</h2>
+          <p class="section-desc-minimal">How we guide your investment from concept sketch to actual handover.</p>
         </div>
 
-        <!-- Horizontal Timeline Wrapper -->
-        <div class="timeline-container-outer reveal-fade">
-          <!-- Animated Line Background -->
-          <div class="timeline-progress-bar">
-            <div class="timeline-progress-line" id="timelineProgress"></div>
+        <div class="newage-timeline-container reveal-fade">
+          <!-- Glass horizontal progress line -->
+          <div class="timeline-indicator-track">
+            <div class="timeline-fill-bar" id="timelineProgress"></div>
           </div>
 
-          <div class="timeline-scroll-wrapper">
-            <div class="timeline-steps">
-              <!-- Step 1 -->
-              <div class="timeline-step active" data-step="1">
-                <div class="step-marker">01</div>
-                <h3 class="step-title">Consultation</h3>
-                <p class="step-desc">In-depth brief capture and feasibility analysis of the site to establish key design directions.</p>
+          <!-- Timeline Blocks (Swipeable horizontal layout on mobile) -->
+          <div class="timeline-slider-viewport">
+            <div class="timeline-flex-wrapper">
+              
+              <div class="timeline-node active" data-step="1">
+                <div class="node-glow-marker">01</div>
+                <h3 class="node-title">Consultation</h3>
+                <p class="node-paragraph">In-depth brief capture and feasibility analysis of the site to establish key design directions.</p>
               </div>
 
-              <!-- Step 2 -->
-              <div class="timeline-step" data-step="2">
-                <div class="step-marker">02</div>
-                <h3 class="step-title">Concept</h3>
-                <p class="step-desc">Development of structural layouts, architectural layouts, and curated moodboards.</p>
+              <div class="timeline-node" data-step="2">
+                <div class="node-glow-marker">02</div>
+                <h3 class="node-title">Concept</h3>
+                <p class="node-paragraph">Development of structural layouts, architectural layouts, and curated moodboards.</p>
               </div>
 
-              <!-- Step 3 -->
-              <div class="timeline-step" data-step="3">
-                <div class="step-marker">03</div>
-                <h3 class="step-title">Visualization</h3>
-                <p class="step-desc">Photorealistic 3D rendering and VR walkthroughs ensuring complete aesthetic alignment.</p>
+              <div class="timeline-node" data-step="3">
+                <div class="node-glow-marker">03</div>
+                <h3 class="node-title">Visualization</h3>
+                <p class="node-paragraph">Photorealistic 3D rendering and VR walkthroughs ensuring complete aesthetic alignment.</p>
               </div>
 
-              <!-- Step 4 -->
-              <div class="timeline-step" data-step="4">
-                <div class="step-marker">04</div>
-                <h3 class="step-title">Execution</h3>
-                <p class="step-desc">Turnkey coordination, engineering layouts, material procurement, and site supervision.</p>
+              <div class="timeline-node" data-step="4">
+                <div class="node-glow-marker">04</div>
+                <h3 class="node-title">Execution</h3>
+                <p class="node-paragraph">Turnkey coordination, engineering layouts, material procurement, and site supervision.</p>
               </div>
 
-              <!-- Step 5 -->
-              <div class="timeline-step" data-step="5">
-                <div class="step-marker">05</div>
-                <h3 class="step-title">Final Reveal</h3>
-                <p class="step-desc">Handover of the meticulously tailored space, matching the approved 3D renders perfectly.</p>
+              <div class="timeline-node" data-step="5">
+                <div class="node-glow-marker">05</div>
+                <h3 class="node-title">Final Reveal</h3>
+                <p class="node-paragraph">Handover of the meticulously tailored space, matching the approved 3D renders perfectly.</p>
               </div>
+
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 7. BEFORE / AFTER -->
-    <section class="comparison-section">
-      <div class="container">
+    <!-- ROOM 6: INTERACTIVE BEFORE/AFTER EXHIBITION (Icy Slider Frame) -->
+    <section class="showroom-room room-slider" data-theme="theme-slate" aria-label="Visual Transformations">
+      <div class="container compact-container">
         <div class="section-header reveal-fade">
-          <span class="section-subtitle">Visual Transformation</span>
-          <h2 class="section-title">The Power of Detail</h2>
+          <span class="section-room-num">Room 05</span>
+          <h2 class="section-title-art">Structural Metamorphosis</h2>
+          <p class="section-desc-minimal">Drag or touch the floating handle to reveal the finished layout detail.</p>
         </div>
 
-        <!-- Interactive Slider Box -->
-        <div class="comparison-slider-container reveal-fade" id="comparisonSlider">
-          <!-- Before Image -->
-          <div class="image-wrapper img-before">
-            <img src="assets/before-living.png" alt="Raw concrete structural skeleton during construction phase">
-            <span class="image-badge badge-before">Before Construction</span>
-          </div>
-
-          <!-- After Image (Resized Container) -->
-          <div class="image-wrapper img-after" id="afterImageWrapper">
-            <img src="assets/after-living.png" alt="Completed luxury living space with warm plaster walls and bronze accents">
-            <span class="image-badge badge-after">Completed Interior</span>
-          </div>
-
-          <!-- Slider Bar / Handle -->
-          <div class="slider-handle" id="sliderHandle" aria-label="Drag to compare before and after images" tabindex="0" role="slider" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-            <div class="handle-line" aria-hidden="true"></div>
-            <div class="handle-button" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
-              </svg>
+        <!-- Glass framed slider box -->
+        <div class="slider-glass-frame reveal-fade">
+          <div class="comparison-slider-container" id="comparisonSlider">
+            <!-- Raw Shell -->
+            <div class="image-wrapper img-before">
+              <img src="assets/before-living.png" alt="Raw concrete villa shell under construction">
+              <span class="image-badge badge-before">Civil Shell</span>
             </div>
-            <div class="handle-line" aria-hidden="true"></div>
+
+            <!-- Luxury Finished -->
+            <div class="image-wrapper img-after" id="afterImageWrapper">
+              <img src="assets/after-living.png" alt="Completed luxury living space with warm plaster walls">
+              <span class="image-badge badge-after">Finished Gallery Room</span>
+            </div>
+
+            <!-- Floating Drag Handle -->
+            <div class="slider-handle" id="sliderHandle" aria-label="Drag to compare design changes" tabindex="0" role="slider" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+              <div class="handle-line" aria-hidden="true"></div>
+              <div class="handle-button" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+                </svg>
+              </div>
+              <div class="handle-line" aria-hidden="true"></div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 8. WHY CHOOSE US -->
-    <section class="why-section">
-      <div class="container">
+    <!-- ROOM 7: WHY CHOOSE US & VALUES (Granite & Wood Texture Accents) -->
+    <section class="showroom-room room-why" data-theme="theme-green" aria-label="Our Core Values">
+      <div class="container compact-container">
         <div class="section-header reveal-fade">
-          <span class="section-subtitle">Our Credentials</span>
-          <h2 class="section-title">Why Asshwini Ghodke</h2>
+          <span class="section-room-num">Room 06</span>
+          <h2 class="section-title-art">Why Asshwini Ghodke</h2>
         </div>
 
-        <div class="why-grid">
-          <!-- Column 1 -->
-          <div class="why-col reveal-fade">
-            <span class="why-number">01</span>
-            <h3 class="why-title">Innovative Design</h3>
-            <p class="why-desc">We eschew repetitive trends. Each layout is engineered from the ground up, tailored explicitly to the micro-climate, site geometry, and lifestyle.</p>
+        <div class="why-grid-newage">
+          <div class="why-value-glass reveal-fade">
+            <span class="why-num-glow">01</span>
+            <h3>Bespoke Layouts</h3>
+            <p>We reject standard templates. Every space is mapped around site physics, solar paths, and custom luxury requirements.</p>
           </div>
 
-          <!-- Column 2 -->
-          <div class="why-col reveal-fade">
-            <span class="why-number">02</span>
-            <h3 class="why-title">Transparent Budget</h3>
-            <p class="why-desc">Detailed Bill of Quantities (BOQ) with no hidden clauses. Every rupee spent is pre-approved, ensuring luxury execution without financial friction.</p>
+          <div class="why-value-glass reveal-fade">
+            <span class="why-num-glow">02</span>
+            <h3>No Hidden Surcharges</h3>
+            <p>Transparent quantity surveys. Every materials investment is itemized and locked prior to structural construction.</p>
           </div>
 
-          <!-- Column 3 -->
-          <div class="why-col reveal-fade">
-            <span class="why-number">03</span>
-            <h3 class="why-title">Premium Materials</h3>
-            <p class="why-desc">Partnerships with top national and international suppliers. We ensure premium quality marbles, custom bronze components, and structural steel.</p>
+          <div class="why-value-glass reveal-fade">
+            <span class="why-num-glow">03</span>
+            <h3>Premium Supplies</h3>
+            <p>Direct integration with premium marble mines, custom hardware creators, and high-end textiles houses.</p>
           </div>
 
-          <!-- Column 4 -->
-          <div class="why-col reveal-fade">
-            <span class="why-number">04</span>
-            <h3 class="why-title">On-Time Delivery</h3>
-            <p class="why-desc">Phased project management using modern Gantt charts. We coordinate multiple site teams concurrently to guarantee handover targets.</p>
+          <div class="why-value-glass reveal-fade">
+            <span class="why-num-glow">04</span>
+            <h3>Strict handovers</h3>
+            <p>Detailed scheduling via digital Gantt management systems. We align contractors to respect project delivery timelines.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 9. CLIENT TESTIMONIALS -->
-    <section class="testimonials-section">
-      <div class="container">
+    <!-- ROOM 8: TESTIMONIALS & CINEMATIC VIEW (Floating Glass Cards) -->
+    <section class="showroom-room room-testimonials" data-theme="theme-blue" aria-label="Client Experience">
+      <div class="container compact-container">
         <div class="section-header reveal-fade">
-          <span class="section-subtitle">Client Perspectives</span>
-          <h2 class="section-title">Client Testimonials</h2>
+          <span class="section-room-num">Room 07</span>
+          <h2 class="section-title-art">Client Testimonials</h2>
         </div>
 
-        <div class="testimonials-grid">
-          <!-- Card 1 -->
-          <blockquote class="testimonial-card reveal-fade">
-            <div class="testimonial-rating" aria-label="5 out of 5 stars">★★★★★</div>
-            <p class="testimonial-text">"Value for money and excellent quality. The turnaround time for our apartment refurbishing was exceptional, and their direct supervision made the entire process stress-free."</p>
-            <cite class="testimonial-author">
-              <span class="author-name">Dr. Rajesh Deshmukh</span>
-              <span class="author-info">Villa Owner, Indore</span>
-            </cite>
+        <!-- Horizontal testimonials slider to remove vertical scrolling baggage -->
+        <div class="testimonials-slider-newage reveal-fade">
+          <blockquote class="testimonial-glass-card">
+            <div class="rating-stars">★★★★★</div>
+            <p class="quote-text">"Value for money and excellent quality. The turnaround time for our apartment refurbishing was exceptional, and their direct supervision made the entire process stress-free."</p>
+            <cite class="quote-author">Dr. Rajesh Deshmukh &bull; Villa Owner, Indore</cite>
           </blockquote>
 
-          <!-- Card 2 -->
-          <blockquote class="testimonial-card reveal-fade">
-            <div class="testimonial-rating" aria-label="5 out of 5 stars">★★★★★</div>
-            <p class="testimonial-text">"So understanding and brings innovation according to our budget. They transformed our commercial office space layout. The lighting and materials speak volumes about their expertise."</p>
-            <cite class="testimonial-author">
-              <span class="author-name">Anjali Shrivastava</span>
-              <span class="author-info">Managing Director, Octane Systems</span>
-            </cite>
+          <blockquote class="testimonial-glass-card">
+            <div class="rating-stars">★★★★★</div>
+            <p class="quote-text">"So understanding and brings innovation according to our budget. They transformed our commercial office space layout. The lighting and materials speak volumes about their expertise."</p>
+            <cite class="quote-author">Anjali Shrivastava &bull; Managing Director, Octane Systems</cite>
           </blockquote>
 
-          <!-- Card 3 -->
-          <blockquote class="testimonial-card reveal-fade">
-            <div class="testimonial-rating" aria-label="5 out of 5 stars">★★★★★</div>
-            <p class="testimonial-text">"I highly recommend them. Their architectural layouts are highly functional. They designed our resort cottage and integrated the landscaping beautifully into the elevation."</p>
-            <cite class="testimonial-author">
-              <span class="author-name">Siddharth Mehta</span>
-              <span class="author-info">Co-Founder, Riverbank Resort</span>
-            </cite>
+          <blockquote class="testimonial-glass-card">
+            <div class="rating-stars">★★★★★</div>
+            <p class="quote-text">"I highly recommend them. Their architectural layouts are highly functional. They designed our resort cottage and integrated the landscaping beautifully into the elevation."</p>
+            <cite class="quote-author">Siddharth Mehta &bull; Co-Founder, Riverbank Resort</cite>
           </blockquote>
         </div>
-      </div>
-    </section>
 
-    <!-- 10. VIDEO SHOWCASE -->
-    <section class="video-section">
-      <div class="container">
-        <div class="section-header reveal-fade">
-          <span class="section-subtitle">Cinematic View</span>
-          <h2 class="section-title">Virtual Walkthrough</h2>
-        </div>
-
-        <!-- Video Player Envelope -->
-        <div class="video-container reveal-fade">
-          <div class="video-wrapper">
-            <!-- Utilizing placeholder loop with elegant architecture styling -->
-            <video class="showcase-video" autoplay muted loop playsinline poster="assets/office-contact.png" aria-label="Cinematic video walkthrough of luxury villa architectural spaces">
-              <!-- Using standard reliable premium sample placeholder video -->
+        <!-- Video Walkthrough in a Floating Glass Panel -->
+        <div class="video-showcase-panel reveal-fade">
+          <div class="video-headline-wrapper">
+            <h3>Cinematic Tour</h3>
+            <p>Immerse yourself in a virtual walkthrough of one of our luxury residential projects in Indore.</p>
+          </div>
+          <div class="video-glass-container">
+            <video class="showcase-video-newage" autoplay muted loop playsinline poster="assets/office-contact.png" aria-label="Cinematic video walkthrough of luxury villa architectural spaces">
               <source src="https://assets.mixkit.co/videos/preview/mixkit-architecture-of-a-modern-house-exterior-32863-large.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
-            <div class="video-ui-overlay" aria-hidden="true">
-              <button class="video-control-btn" id="videoSoundBtn" aria-label="Unmute walkthrough video">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="icon-mute">
+            <div class="video-control-absolute">
+              <button class="sound-toggle-badge" id="videoSoundBtn" aria-label="Unmute video walkthrough">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 9.75L19.5 12m0 0l2.25 2.25M19.5 12l2.25-2.25M19.5 12l-2.25 2.25m-10.5-6L4.5 9H1.5v6h3l4.5 3.75V5.25z" />
                 </svg>
               </button>
             </div>
           </div>
         </div>
+
       </div>
     </section>
 
-    <!-- 11. INSTAGRAM GALLERY -->
-    <section class="instagram-section">
-      <div class="container">
-        <div class="instagram-header reveal-fade">
-          <div>
-            <span class="section-subtitle">Digital Journal</span>
-            <h2 class="section-title">On Instagram</h2>
-          </div>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-insta-header">
-            Follow Journal
-          </a>
-        </div>
-
-        <div class="insta-grid">
-          <!-- Image 1 -->
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="insta-card reveal-fade" aria-label="View Instagram post detail of concrete architectural archway">
-            <div class="insta-img-wrapper">
-              <img src="assets/insta-1.png" loading="lazy" alt="Detail photography of concrete archway with warm casting shadows" class="insta-img">
-              <div class="insta-hover-overlay">
-                <span class="insta-icon">📷</span>
-              </div>
-            </div>
-          </a>
-
-          <!-- Image 2 -->
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="insta-card reveal-fade" aria-label="View Instagram post detail of custom bronze door handle">
-            <div class="insta-img-wrapper">
-              <img src="assets/insta-2.png" loading="lazy" alt="Bespoke bronze handle fixture detail in a modern villa" class="insta-img">
-              <div class="insta-hover-overlay">
-                <span class="insta-icon">📷</span>
-              </div>
-            </div>
-          </a>
-
-          <!-- Image 3 -->
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="insta-card reveal-fade" aria-label="View Instagram post detail of luxury hotel bedroom design">
-            <div class="insta-img-wrapper">
-              <img src="assets/project-hotel.png" loading="lazy" alt="Luxury suite interior bedroom snapshot with warm layout" class="insta-img">
-              <div class="insta-hover-overlay">
-                <span class="insta-icon">📷</span>
-              </div>
-            </div>
-          </a>
-
-          <!-- Image 4 -->
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="insta-card reveal-fade" aria-label="View Instagram post detail of contemporary cafe interior">
-            <div class="insta-img-wrapper">
-              <img src="assets/project-cafe.png" loading="lazy" alt="Modern commercial cafe furniture architectural detail" class="insta-img">
-              <div class="insta-hover-overlay">
-                <span class="insta-icon">📷</span>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 12. FAQ ACCORDION -->
-    <section class="faq-section">
-      <div class="container">
+    <!-- ROOM 9: FAQ ACCORDION (Floating Icy Glass UI) -->
+    <section class="showroom-room room-faq" data-theme="theme-slate" aria-label="Frequently Asked Questions">
+      <div class="container compact-container">
         <div class="section-header reveal-fade">
-          <span class="section-subtitle">FAQ</span>
-          <h2 class="section-title">Frequently Asked Questions</h2>
+          <span class="section-room-num">Room 08</span>
+          <h2 class="section-title-art">Frequently Asked</h2>
         </div>
 
-        <div class="faq-accordion-wrapper reveal-fade">
-          <!-- FAQ 1 -->
-          <div class="faq-item">
-            <button class="faq-header" aria-expanded="false" aria-controls="faq-content-1" id="faq-btn-1">
+        <div class="faq-accordion-newage reveal-fade">
+          <!-- Accordion item 1 -->
+          <div class="faq-glass-node">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-ans-1" id="faq-q-1">
               <span>How much does an interior project cost?</span>
-              <span class="faq-icon-indicator" aria-hidden="true"></span>
+              <span class="faq-trigger-icon"></span>
             </button>
-            <div class="faq-content" id="faq-content-1" role="region" aria-labelledby="faq-btn-1" aria-hidden="true">
-              <div class="faq-content-inner">
+            <div class="faq-body" id="faq-ans-1" role="region" aria-labelledby="faq-q-1" aria-hidden="true">
+              <div class="faq-body-content">
                 <p>Every interior project is uniquely scoped. Costs depend entirely on the material specification, civil reconstruction requirements, and furniture designs. Our typical project budgets range from ₹10 Lakhs for premium single spaces or apartments up to ₹2 Crores+ for extensive luxury villa turnkeys. We provide a detailed Bill of Quantities (BOQ) during the design phase to outline costs clearly.</p>
               </div>
             </div>
           </div>
 
-          <!-- FAQ 2 -->
-          <div class="faq-item">
-            <button class="faq-header" aria-expanded="false" aria-controls="faq-content-2" id="faq-btn-2">
+          <!-- Accordion item 2 -->
+          <div class="faq-glass-node">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-ans-2" id="faq-q-2">
               <span>How long does it take to complete?</span>
-              <span class="faq-icon-indicator" aria-hidden="true"></span>
+              <span class="faq-trigger-icon"></span>
             </button>
-            <div class="faq-content" id="faq-content-2" role="region" aria-labelledby="faq-btn-2" aria-hidden="true">
-              <div class="faq-content-inner">
+            <div class="faq-body" id="faq-ans-2" role="region" aria-labelledby="faq-q-2" aria-hidden="true">
+              <div class="faq-body-content">
                 <p>A typical residential apartment project takes between 3 to 5 months. Architectural design and execution of custom luxury villas can range from 8 to 14 months depending on structural scale and turnkey details. A detailed schedule with project phases is provided prior to commencement.</p>
               </div>
             </div>
           </div>
 
-          <!-- FAQ 3 -->
-          <div class="faq-item">
-            <button class="faq-header" aria-expanded="false" aria-controls="faq-content-3" id="faq-btn-3">
+          <!-- Accordion item 3 -->
+          <div class="faq-glass-node">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-ans-3" id="faq-q-3">
               <span>Can you handle turnkey execution?</span>
-              <span class="faq-icon-indicator" aria-hidden="true"></span>
+              <span class="faq-trigger-icon"></span>
             </button>
-            <div class="faq-content" id="faq-content-3" role="region" aria-labelledby="faq-btn-3" aria-hidden="true">
-              <div class="faq-content-inner">
+            <div class="faq-body" id="faq-ans-3" role="region" aria-labelledby="faq-q-3" aria-hidden="true">
+              <div class="faq-body-content">
                 <p>Yes, we specialize in turnkey execution. This means we supervise the design concept phase, coordinate with civil contracting teams, procure materials directly from manufacturers, and supervise structural assemblies, providing you a seamless transition from blueprints to key handover.</p>
               </div>
             </div>
           </div>
 
-          <!-- FAQ 4 -->
-          <div class="faq-item">
-            <button class="faq-header" aria-expanded="false" aria-controls="faq-content-4" id="faq-btn-4">
+          <!-- Accordion item 4 -->
+          <div class="faq-glass-node">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="faq-ans-4" id="faq-q-4">
               <span>Do you work outside Indore?</span>
-              <span class="faq-icon-indicator" aria-hidden="true"></span>
+              <span class="faq-trigger-icon"></span>
             </button>
-            <div class="faq-content" id="faq-content-4" role="region" aria-labelledby="faq-btn-4" aria-hidden="true">
-              <div class="faq-content-inner">
+            <div class="faq-body" id="faq-ans-4" role="region" aria-labelledby="faq-q-4" aria-hidden="true">
+              <div class="faq-body-content">
                 <p>While our primary studio is based in Indore, Madhya Pradesh, we design and supervise architecture and luxury residential villa projects across India. For outstation projects, we conduct initial site visits and deliver detailed construction layouts, coordinating with local partners or placing site supervisors.</p>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- Instagram Gallery Row (Horizontal swipeable elements) -->
+        <div class="instagram-newage-wrapper reveal-fade">
+          <div class="insta-newage-header">
+            <h4>On Instagram</h4>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="btn-instagram-link">Follow @asshwinighodke_architects</a>
+          </div>
+          <div class="insta-newage-row">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="insta-image-box">
+              <img src="assets/insta-1.png" loading="lazy" alt="Instagram arch details">
+              <span class="insta-badge-glow">View detail</span>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="insta-image-box">
+              <img src="assets/insta-2.png" loading="lazy" alt="Instagram bronze fittings">
+              <span class="insta-badge-glow">View detail</span>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="insta-image-box">
+              <img src="assets/project-hotel.png" loading="lazy" alt="Instagram resort details">
+              <span class="insta-badge-glow">View detail</span>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="insta-image-box">
+              <img src="assets/project-cafe.png" loading="lazy" alt="Instagram cafe details">
+              <span class="insta-badge-glow">View detail</span>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- 13. CONTACT & BOOKING FORM -->
-    <section class="contact-section" id="contact">
-      <div class="container">
-        <div class="contact-grid">
-          <!-- Left Column (Information and Image) -->
-          <div class="contact-info-col reveal-fade">
-            <span class="section-subtitle">Enquiries</span>
-            <h2 class="contact-title">Let's craft your space.</h2>
-            <p class="contact-intro">Schedule a consultation at our studio or request an initial site analysis. Let's discuss details.</p>
-
-            <div class="contact-details-list">
-              <div class="contact-detail-item">
-                <span class="detail-label">Studio Phone</span>
-                <a href="tel:+917987903535" class="detail-valueLink">+91 79879 03535</a>
-              </div>
-              <div class="contact-detail-item">
-                <span class="detail-label">Studio Address</span>
-                <p class="detail-value">B-89, Behind JMB, Sector A, Pipliyahana, Indore, Madhya Pradesh</p>
-              </div>
-            </div>
-
-            <!-- Styled Map Wrapper -->
-            <div class="map-wrapper">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.5694207909386!2d75.899478!3d22.707073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fd3bc6db91a1%3A0xe54e60a373d5a443!2sPipliyahana%2C%20Indore%2C%20Madhya%20Pradesh%20452016!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" aria-label="Google Maps showing office location in Pipliyahana, Indore"></iframe>
-            </div>
+    <!-- ROOM 10: CONTACT BOOKING (High-End Glowing Form) -->
+    <section class="showroom-room room-contact" id="contact" data-theme="theme-blue" aria-label="Book Consultation">
+      <div class="container compact-container">
+        <div class="contact-newage-grid">
+          
+          <!-- Left Details (Office visual overlay) -->
+          <div class="contact-details-panel reveal-fade">
+            <span class="section-room-num">Room 09</span>
+            <h2 class="showroom-heading">Let's craft your space.</h2>
+            <p class="contact-p-desc">Visit our Indore studio for material sample evaluations or request a virtual presentation.</p>
             
-            <div class="studio-photo-container">
-              <img src="assets/office-contact.png" loading="lazy" alt="Asshwini Ghodke luxury architecture office studio environment" class="studio-photo">
+            <div class="detail-glow-nodes">
+              <div class="detail-node-glass">
+                <span class="node-label">Telephone</span>
+                <a href="tel:+917987903535" class="node-value-link">+91 79879 03535</a>
+              </div>
+              <div class="detail-node-glass">
+                <span class="node-label">Indore Address</span>
+                <p class="node-value-desc">B-89, Behind JMB, Sector A, Pipliyahana, Indore, Madhya Pradesh</p>
+              </div>
+            </div>
+
+            <!-- Styled Map and Studio visual in side-by-side float -->
+            <div class="contact-media-glass">
+              <div class="google-map-glass-wrapper">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.5694207909386!2d75.899478!3d22.707073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fd3bc6db91a1%3A0xe54e60a373d5a443!2sPipliyahana%2C%20Indore%2C%20Madhya%20Pradesh%20452016!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="180" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" aria-label="Google Maps studio location"></iframe>
+              </div>
+              <div class="office-glass-image-wrapper">
+                <img src="assets/office-contact.png" loading="lazy" alt="Studio office interior">
+              </div>
             </div>
           </div>
 
-          <!-- Right Column (Booking Form) -->
-          <div class="contact-form-col reveal-fade">
-            <div class="form-wrapper">
-              <h3 class="form-title">Consultation Booking</h3>
-              <p class="form-subtitle">Kindly fill the structural brief and our design associate will contact you within 24 hours.</p>
+          <!-- Right Booking Form (Glass Container with Glowing Inputs) -->
+          <div class="contact-form-panel reveal-fade">
+            <div class="glass-form-envelope">
+              <h3 class="form-newage-title">Schedule Gallery Tour</h3>
+              <p class="form-newage-desc">Kindly outline your structural project investment scale.</p>
 
-              <form class="booking-form" id="bookingForm" novalidate>
-                <!-- Form Status Message -->
+              <form class="newage-form" id="bookingForm" novalidate>
+                <!-- Submission Message Overlay -->
                 <div class="form-status-msg" id="formStatus" aria-live="polite"></div>
 
-                <!-- Input Name -->
-                <div class="form-group">
-                  <label for="clientName">Full Name <span class="required-star">*</span></label>
-                  <input type="text" id="clientName" name="name" placeholder="E.g., Rajesh Sharma" required aria-required="true">
-                  <span class="error-msg" id="nameError" role="alert">Please enter your name</span>
-                </div>
-
-                <!-- Input Phone -->
-                <div class="form-group">
-                  <label for="clientPhone">Phone Number <span class="required-star">*</span></label>
-                  <input type="tel" id="clientPhone" name="phone" placeholder="E.g., +91 98765 43210" required aria-required="true">
-                  <span class="error-msg" id="phoneError" role="alert">Please enter a valid 10-digit phone number</span>
-                </div>
-
-                <!-- Input Email -->
-                <div class="form-group">
-                  <label for="clientEmail">Email Address <span class="required-star">*</span></label>
-                  <input type="email" id="clientEmail" name="email" placeholder="E.g., rajesh@gmail.com" required aria-required="true">
-                  <span class="error-msg" id="emailError" role="alert">Please enter a valid email address</span>
-                </div>
-
-                <!-- Project Type -->
-                <div class="form-group">
-                  <label for="projectType">Project Type <span class="required-star">*</span></label>
-                  <div class="select-wrapper">
-                    <select id="projectType" name="projectType" required aria-required="true">
-                      <option value="" disabled selected>Select service</option>
-                      <option value="Residential Villa">Luxury Residential Villa</option>
-                      <option value="Apartment Interior">Apartment Interior Design</option>
-                      <option value="Commercial Space">Commercial / Retail Interior</option>
-                      <option value="Hotel/Resort">Hotel or Resort Architecture</option>
-                      <option value="Office Design">Office Space Design</option>
-                      <option value="Refurbishment">Refurbishment Project</option>
-                      <option value="Civil Planning">Civil Structure Planning</option>
-                    </select>
+                <div class="form-row-glow">
+                  <div class="form-group-glow">
+                    <label for="clientName">Name <span class="accent-dot">*</span></label>
+                    <input type="text" id="clientName" placeholder="E.g., Rajesh Sharma" required aria-required="true">
+                    <span class="error-glow" id="nameError" role="alert">Name is required</span>
                   </div>
-                  <span class="error-msg" id="projectError" role="alert">Please select a project type</span>
-                </div>
-
-                <!-- Budget Selection -->
-                <div class="form-group">
-                  <label for="projectBudget">Project Budget Range <span class="required-star">*</span></label>
-                  <div class="select-wrapper">
-                    <select id="projectBudget" name="budget" required aria-required="true">
-                      <option value="" disabled selected>Select investment range</option>
-                      <option value="10-25 Lakhs">₹10 Lakhs - ₹25 Lakhs</option>
-                      <option value="25-50 Lakhs">₹25 Lakhs - ₹50 Lakhs</option>
-                      <option value="50 Lakhs - 1 Crore">₹50 Lakhs - ₹1 Crore</option>
-                      <option value="1 Crore - 2 Crores">₹1 Crore - ₹2 Crores</option>
-                      <option value="2 Crores+">₹2 Crores +</option>
-                    </select>
+                  
+                  <div class="form-group-glow">
+                    <label for="clientPhone">Phone <span class="accent-dot">*</span></label>
+                    <input type="tel" id="clientPhone" placeholder="E.g., +91 98765 43210" required aria-required="true">
+                    <span class="error-glow" id="phoneError" role="alert">Valid 10-digit number is required</span>
                   </div>
-                  <span class="error-msg" id="budgetError" role="alert">Please select your budget range</span>
                 </div>
 
-                <!-- Brief Message -->
-                <div class="form-group">
-                  <label for="projectMessage">Brief Message <span class="required-star">*</span></label>
-                  <textarea id="projectMessage" name="message" rows="4" placeholder="Describe your site location, area in sq. ft. and vision..." required aria-required="true"></textarea>
-                  <span class="error-msg" id="messageError" role="alert">Please enter details of your project</span>
+                <div class="form-group-glow">
+                  <label for="clientEmail">Email <span class="accent-dot">*</span></label>
+                  <input type="email" id="clientEmail" placeholder="E.g., rajesh@gmail.com" required aria-required="true">
+                  <span class="error-glow" id="emailError" role="alert">Valid email address is required</span>
                 </div>
 
-                <button type="submit" class="btn btn-bronze btn-full btn-submit-form" id="submitBtn">
-                  <span>Schedule Consultation</span>
+                <div class="form-row-glow">
+                  <div class="form-group-glow">
+                    <label for="projectType">Project Type <span class="accent-dot">*</span></label>
+                    <div class="select-glow-wrapper">
+                      <select id="projectType" required aria-required="true">
+                        <option value="" disabled selected>Select service</option>
+                        <option value="Residential Villa">Luxury Villa</option>
+                        <option value="Apartment Interior">Apartment Interior</option>
+                        <option value="Commercial Space">Commercial / Retail</option>
+                        <option value="Hotel/Resort">Hotel / Resort</option>
+                        <option value="Office Design">Office Design</option>
+                        <option value="Refurbishment">Refurbishment</option>
+                        <option value="Civil Planning">Civil Planning</option>
+                      </select>
+                    </div>
+                    <span class="error-glow" id="projectError" role="alert">Please select project type</span>
+                  </div>
+
+                  <div class="form-group-glow">
+                    <label for="projectBudget">Investment Scale <span class="accent-dot">*</span></label>
+                    <div class="select-glow-wrapper">
+                      <select id="projectBudget" required aria-required="true">
+                        <option value="" disabled selected>Select investment</option>
+                        <option value="10-25 Lakhs">₹10 Lakhs - ₹25 Lakhs</option>
+                        <option value="25-50 Lakhs">₹25 Lakhs - ₹50 Lakhs</option>
+                        <option value="50 Lakhs - 1 Crore">₹50 Lakhs - ₹1 Crore</option>
+                        <option value="1 Crore - 2 Crores">₹1 Crore - ₹2 Crores</option>
+                        <option value="2 Crores+">₹2 Crores +</option>
+                      </select>
+                    </div>
+                    <span class="error-glow" id="budgetError" role="alert">Please select budget</span>
+                  </div>
+                </div>
+
+                <div class="form-group-glow">
+                  <label for="projectMessage">Spatial Brief <span class="accent-dot">*</span></label>
+                  <textarea id="projectMessage" rows="3" placeholder="Describe area details and architectural requirements..." required aria-required="true"></textarea>
+                  <span class="error-glow" id="messageError" role="alert">Please enter brief description</span>
+                </div>
+
+                <button type="submit" class="btn btn-primary-glowing btn-full" id="submitBtn">
+                  <span>Schedule Tour</span>
                 </button>
               </form>
             </div>
           </div>
+
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-container">
-      <div class="footer-brand-col">
-        <a href="#" class="footer-logo" aria-label="Asshwini Ghodke homepage">
-          <span class="logo-serif">A.G</span>
-          <span class="logo-text">Architects & Associates</span>
-        </a>
-        <p class="footer-tagline">Timeless luxury spaces built on functional foundations. Supervised with execution excellence across Madhya Pradesh and India.</p>
-        <div class="footer-contact-direct">
-          <a href="tel:+917987903535" class="footer-phone-btn btn btn-outline btn-full">
-            Call Studio: +91 79879 03535
+  <!-- NEW AGE MINIMAL FOOTER -->
+  <footer class="showroom-footer">
+    <div class="container compact-container">
+      <div class="footer-grid-newage">
+        
+        <div class="footer-brand-summary">
+          <a href="#" class="footer-logo">
+            <span class="logo-bold">A.G</span>
+            <span class="logo-sub">STUDIO</span>
           </a>
+          <p class="footer-brand-p">Immersive architecture showroom. Executed with turn-key excellence across Madhya Pradesh and major cities in India.</p>
+          <a href="tel:+917987903535" class="footer-direct-call-btn">Call Studio: +91 79879 03535</a>
         </div>
-      </div>
 
-      <div class="footer-nav-col">
-        <h4 class="footer-title">Navigation</h4>
-        <nav aria-label="Footer links">
-          <ul class="footer-links">
-            <li><a href="#projects">Portfolios</a></li>
-            <li><a href="#about">Our Philosophy</a></li>
-            <li><a href="#services">Services Provided</a></li>
-            <li><a href="#process">Our Method</a></li>
-            <li><a href="#contact">Book Consultation</a></li>
+        <div class="footer-nav-links-col">
+          <h4 class="footer-section-title">Directory</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#projects">Gallery Rooms</a></li>
+            <li><a href="#about">Philosophy</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#process">Our Methodology</a></li>
+            <li><a href="#contact">Consultation</a></li>
           </ul>
-        </nav>
-      </div>
-
-      <div class="footer-social-col">
-        <h4 class="footer-title">Follow Us</h4>
-        <ul class="footer-social-links">
-          <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Visit Instagram page">Instagram</a></li>
-          <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Visit Facebook page">Facebook</a></li>
-        </ul>
-        <div class="footer-address">
-          <p>B-89, Behind JMB, Sector A,</p>
-          <p>Pipliyahana, Indore,</p>
-          <p>Madhya Pradesh 452016</p>
         </div>
+
+        <div class="footer-social-links-col">
+          <h4 class="footer-section-title">Follow Us</h4>
+          <ul class="footer-social-list">
+            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+          </ul>
+          <div class="footer-studio-info">
+            <p>B-89, Behind JMB,</p>
+            <p>Sector A, Pipliyahana,</p>
+            <p>Indore, MP 452016</p>
+          </div>
+        </div>
+
       </div>
     </div>
 
-    <div class="footer-copyright-container">
-      <div class="container copyright-inner">
+    <div class="footer-copyright-panel">
+      <div class="container compact-container copyright-inner-flex">
         <p>&copy; 2026 Asshwini Ghodke Architects Interiors & Associates. All rights reserved.</p>
-        <p class="creator-credits">Crafted for Luxury and Mobile Ergonomics.</p>
+        <p class="credits-text">Designed as a Digital Architecture Art Gallery.</p>
       </div>
     </div>
   </footer>
 
-  <!-- FLOATING WHATSAPP BUTTON (Optimized for One-Handed Thumb Reach) -->
-  <a href="https://wa.me/917987903535?text=Hello%20Asshwini%20Ghodke%20Architects,%20I%20would%20like%20to%20book%20a%20luxury%20consultation." class="floating-whatsapp" id="whatsappCTA" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp for enquiry">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+  <!-- ONE-HANDED THUMB FRIENDLY FLOATING WHATSAPP CTA -->
+  <a href="https://wa.me/917987903535?text=Hello%20Asshwini%20Ghodke%20Architects,%20I%20would%20like%20to%20book%20a%20luxury%20consultation." class="floating-whatsapp-newage" id="whatsappCTA" target="_blank" rel="noopener noreferrer" aria-label="Book luxury consultation on WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
       <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.966a9.83 9.83 0 00-6.974-2.85C6.184 1.99 1.762 6.361 1.757 11.79c-.001 1.714.463 3.39 1.347 4.9l-.994 3.633 3.737-.969zm13.125-9.351c-.329-.165-1.952-.964-2.253-1.074-.301-.11-.52-.165-.739.165-.219.329-.849 1.074-1.041 1.293-.192.219-.384.247-.713.082-1.859-.929-2.586-1.205-3.666-3.07-.27-.468.27-.434.773-1.439.082-.165.041-.302-.02-.468-.062-.165-.52-1.253-.713-1.715-.188-.452-.379-.39-.52-.397-.136-.006-.291-.007-.447-.007-.156 0-.411.058-.626.294-.216.235-.825.806-.825 1.966 0 1.16.843 2.28 1.011 2.51.168.23 1.653 2.523 4.002 3.537.558.241 1.037.385 1.393.498.562.179 1.073.154 1.478.093.451-.068 1.952-.797 2.226-1.564.274-.768.274-1.427.192-1.564-.082-.138-.301-.22-.63-.385z"/>
     </svg>
-    <span class="whatsapp-badge-label">Book Consultation</span>
+    <span class="whatsapp-label-text">Book Tour</span>
   </a>
 
-  <!-- Main JavaScript File -->
+  <!-- Script File -->
   <script src="app.js" defer></script>
 </body>
 </html>

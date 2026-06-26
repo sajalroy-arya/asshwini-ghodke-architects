@@ -1,32 +1,89 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // ==========================================================================
-  // 1. DEVICE CAPABILITY DETECTION & CUSTOM CURSOR
+  // 1. DYNAMIC COLOR-THEMING & SCROLL TRACKER
   // ==========================================================================
-  const customCursor = document.getElementById('customCursor');
+  const sections = document.querySelectorAll('.showroom-room');
+  const bodyEl = document.body;
+  const orbIcy = document.getElementById('orbIcy');
+  const orbRoyal = document.getElementById('orbRoyal');
+  const orbGreen = document.getElementById('orbGreen');
+  const coveBeam = document.getElementById('coveBeam');
+
+  const themeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const themeName = entry.target.getAttribute('data-theme');
+        
+        // Remove existing theme classes
+        bodyEl.classList.remove('theme-icy', 'theme-slate', 'theme-green', 'theme-blue');
+        // Add current theme class
+        bodyEl.classList.add(themeName);
+
+        // Adjust background ambient orbs dynamically to change color values per room
+        if (themeName === 'theme-icy') {
+          if (orbIcy) { orbIcy.style.transform = 'scale(1) translate(0, 0)'; orbIcy.style.opacity = '0.3'; }
+          if (orbRoyal) { orbRoyal.style.opacity = '0.15'; }
+          if (orbGreen) { orbGreen.style.opacity = '0.05'; }
+        } else if (themeName === 'theme-slate') {
+          if (orbIcy) { orbIcy.style.transform = 'scale(0.8) translate(-100px, 50px)'; orbIcy.style.opacity = '0.05'; }
+          if (orbRoyal) { orbRoyal.style.opacity = '0.08'; }
+          if (orbGreen) { orbGreen.style.opacity = '0.05'; }
+        } else if (themeName === 'theme-green') {
+          if (orbIcy) { orbIcy.style.opacity = '0.05'; }
+          if (orbRoyal) { orbRoyal.style.opacity = '0.05'; }
+          if (orbGreen) { orbGreen.style.transform = 'scale(1.2) translate(-50px, -50px)'; orbGreen.style.opacity = '0.28'; }
+        } else if (themeName === 'theme-blue') {
+          if (orbIcy) { orbIcy.style.opacity = '0.1'; }
+          if (orbRoyal) { orbRoyal.style.transform = 'scale(1.2) translate(100px, -100px)'; orbRoyal.style.opacity = '0.3'; }
+          if (orbGreen) { orbGreen.style.opacity = '0.05'; }
+        }
+      }
+    });
+  }, {
+    threshold: 0.25 // Trigger when a quarter of the section is visible
+  });
+
+  sections.forEach(sec => themeObserver.observe(sec));
+
+  // ==========================================================================
+  // 2. SPOTLIGHT CURSOR (Desktop Only)
+  // ==========================================================================
+  const spotlightCursor = document.getElementById('spotlightCursor');
   const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
-  if (customCursor) {
+  if (spotlightCursor) {
     if (!isTouchDevice && window.innerWidth >= 1024) {
       document.addEventListener('mousemove', (e) => {
-        customCursor.style.left = `${e.clientX}px`;
-        customCursor.style.top = `${e.clientY}px`;
+        spotlightCursor.style.left = `${e.clientX}px`;
+        spotlightCursor.style.top = `${e.clientY}px`;
+
+        // Interactive subtle drifting lights on mouse move
+        if (orbIcy) {
+          const moveX = (e.clientX - window.innerWidth / 2) * 0.04;
+          const moveY = (e.clientY - window.innerHeight / 2) * 0.04;
+          orbIcy.style.marginLeft = `${moveX}px`;
+          orbIcy.style.marginTop = `${moveY}px`;
+        }
+        if (coveBeam) {
+          const beamX = (e.clientX - window.innerWidth / 2) * 0.02;
+          coveBeam.style.left = `calc(30% + ${beamX}px)`;
+        }
       });
 
-      // Hover expansion on interactive components
-      const interactives = document.querySelectorAll('a, button, select, input, textarea, .project-card, .service-card, .faq-header, .slider-handle');
+      // Grow spotlight cursor on hover
+      const interactives = document.querySelectorAll('a, button, select, input, textarea, .project-glass-card, .service-glass-card, .faq-trigger, .slider-handle, .insta-image-box');
       interactives.forEach(el => {
-        el.addEventListener('mouseenter', () => customCursor.classList.add('hovered'));
-        el.addEventListener('mouseleave', () => customCursor.classList.remove('hovered'));
+        el.addEventListener('mouseenter', () => spotlightCursor.classList.add('active-glow'));
+        el.addEventListener('mouseleave', () => spotlightCursor.classList.remove('active-glow'));
       });
     } else {
-      // Completely hide it on mobile/tablet or touch laptops
-      customCursor.style.display = 'none';
+      spotlightCursor.style.display = 'none';
     }
   }
 
   // ==========================================================================
-  // 2. STICKY HEADER & SCROLL EFFECTS
+  // 3. STICKY GLASS HEADER & PARALLAX SCROLL
   // ==========================================================================
   const siteHeader = document.getElementById('siteHeader');
   const heroParallax = document.getElementById('heroParallax');
@@ -34,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
 
-    // Header class scroll toggle
+    // Header scrolled state
     if (siteHeader) {
       if (scrollY > 50) {
         siteHeader.classList.add('scrolled');
@@ -43,22 +100,27 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // Hero slow parallax image movement
+    // Parallax background movement
     if (heroParallax && window.innerWidth >= 768) {
       const limit = window.innerHeight;
       if (scrollY <= limit) {
-        const translateVal = scrollY * 0.15;
+        const translateVal = scrollY * 0.12;
         heroParallax.style.transform = `translateY(${translateVal}px)`;
       }
+    }
+
+    // Scroll-based orb drift (Mobile + Desktop)
+    if (orbRoyal) {
+      orbRoyal.style.bottom = `${10 + scrollY * 0.03}%`;
     }
   });
 
   // ==========================================================================
-  // 3. MOBILE MENU NAVIGATION & SCROLL LOCK
+  // 4. MOBILE MENU OVERLAY & BODY SCROLL LOCK
   // ==========================================================================
   const menuToggle = document.getElementById('menuToggle');
   const mobileNav = document.getElementById('mobileNavigation');
-  const mobileLinks = document.querySelectorAll('.mobile-nav-link, .mobile-nav-cta');
+  const mobileLinks = document.querySelectorAll('.mobile-link, .mobile-cta');
 
   if (menuToggle && mobileNav) {
     const toggleMenu = () => {
@@ -67,7 +129,6 @@ document.addEventListener('DOMContentLoaded', () => {
       mobileNav.setAttribute('aria-hidden', isExpanded);
       mobileNav.classList.toggle('open');
       
-      // Prevent body scrolling when nav overlay is visible
       if (!isExpanded) {
         document.body.style.overflow = 'hidden';
       } else {
@@ -77,7 +138,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     menuToggle.addEventListener('click', toggleMenu);
 
-    // Close menu when a link inside is clicked
     mobileLinks.forEach(link => {
       link.addEventListener('click', () => {
         menuToggle.setAttribute('aria-expanded', 'false');
@@ -89,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================================================
-  // 4. INTERSECTION OBSERVER - SCROLL REVEALS
+  // 5. INTERSECTION OBSERVER - SCROLL REVEALS
   // ==========================================================================
   const revealElements = document.querySelectorAll('.reveal-fade, .reveal-text, .reveal-fade-delay');
 
@@ -97,19 +157,18 @@ document.addEventListener('DOMContentLoaded', () => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('active');
-        // Unobserve once revealed to optimize performance
         observer.unobserve(entry.target);
       }
     });
   }, {
     threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px' // Trigger slightly before entering viewport
+    rootMargin: '0px 0px -40px 0px'
   });
 
   revealElements.forEach(el => revealObserver.observe(el));
 
   // ==========================================================================
-  // 5. INTERACTIVE BEFORE/AFTER SLIDER (Touch & Drag)
+  // 6. INTERACTIVE BEFORE/AFTER SLIDER (Touch & Drag)
   // ==========================================================================
   const slider = document.getElementById('comparisonSlider');
   const beforeImg = document.querySelector('.img-before');
@@ -122,17 +181,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const rect = slider.getBoundingClientRect();
       let percentage = ((xPos - rect.left) / rect.width) * 100;
 
-      // Restrict range between 0% and 100%
       if (percentage < 0) percentage = 0;
       if (percentage > 100) percentage = 100;
 
-      // Apply widths and positions
       beforeImg.style.width = `${percentage}%`;
       handle.style.left = `${percentage}%`;
       handle.setAttribute('aria-valuenow', Math.round(percentage));
     };
 
-    // Mouse events
     slider.addEventListener('mousedown', (e) => {
       isDragging = true;
       setSliderPosition(e.clientX);
@@ -147,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
       isDragging = false;
     });
 
-    // Touch events for mobile thumb operation
+    // Touch events for mobile thumb navigation
     slider.addEventListener('touchstart', (e) => {
       isDragging = true;
       setSliderPosition(e.touches[0].clientX);
@@ -162,13 +218,13 @@ document.addEventListener('DOMContentLoaded', () => {
       isDragging = false;
     });
 
-    // Keyboard support for accessibility
+    // Accessibility keys
     handle.addEventListener('keydown', (e) => {
       let percentage = parseFloat(handle.style.left) || 50;
       if (e.key === 'ArrowLeft') {
-        percentage = Math.max(0, percentage - 2);
+        percentage = Math.max(0, percentage - 3);
       } else if (e.key === 'ArrowRight') {
-        percentage = Math.min(100, percentage + 2);
+        percentage = Math.min(100, percentage + 3);
       } else {
         return;
       }
@@ -179,50 +235,47 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================================================
-  // 6. PROCESS TIMELINE PROGRESSION
+  // 7. TIMELINE PROGRESSION
   // ==========================================================================
-  const processSteps = document.querySelectorAll('.timeline-step');
+  const timelineNodes = document.querySelectorAll('.timeline-node');
   const progressLine = document.getElementById('timelineProgress');
 
-  if (processSteps.length > 0 && progressLine) {
-    const processObserver = new IntersectionObserver((entries) => {
+  if (timelineNodes.length > 0 && progressLine) {
+    const timelineObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const stepIndex = parseInt(entry.target.getAttribute('data-step'));
           
-          // Set active state on steps up to current step
-          processSteps.forEach((step, idx) => {
+          timelineNodes.forEach((node, idx) => {
             if (idx < stepIndex) {
-              step.classList.add('active');
+              node.classList.add('active');
             } else {
-              step.classList.remove('active');
+              node.classList.remove('active');
             }
           });
 
-          // Calculate and set timeline line fill percentage
-          const percent = ((stepIndex - 1) / (processSteps.length - 1)) * 100;
-          progressLine.style.width = `${percent}%`;
+          const fillPercentage = ((stepIndex - 1) / (timelineNodes.length - 1)) * 100;
+          progressLine.style.width = `${fillPercentage}%`;
         }
       });
     }, {
-      threshold: 0.6, // Step must be mostly visible to activate
+      threshold: 0.6,
       rootMargin: '0px'
     });
 
-    processSteps.forEach(step => processObserver.observe(step));
+    timelineNodes.forEach(node => timelineObserver.observe(node));
   }
 
   // ==========================================================================
-  // 7. VIDEO WALKTHROUGH MUTE TOGGLE
+  // 8. WALKTHROUGH SOUND TOGGLE
   // ==========================================================================
   const soundBtn = document.getElementById('videoSoundBtn');
-  const showcaseVideo = document.querySelector('.showcase-video');
+  const showcaseVideo = document.querySelector('.showcase-video-newage');
 
   if (soundBtn && showcaseVideo) {
     soundBtn.addEventListener('click', () => {
       showcaseVideo.muted = !showcaseVideo.muted;
       
-      // Update SVG icon inside the button
       if (showcaseVideo.muted) {
         soundBtn.innerHTML = `
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -242,37 +295,33 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================================================
-  // 8. FAQ ACCORDION LOGIC (Dynamic Height transitions)
+  // 9. FAQ GRID ACCORDION
   // ==========================================================================
-  const faqHeaders = document.querySelectorAll('.faq-header');
+  const faqTriggers = document.querySelectorAll('.faq-trigger');
 
-  faqHeaders.forEach(header => {
-    header.addEventListener('click', () => {
-      const isExpanded = header.getAttribute('aria-expanded') === 'true';
-      const contentId = header.getAttribute('aria-controls');
-      const content = document.getElementById(contentId);
+  faqTriggers.forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+      const ansId = trigger.getAttribute('aria-controls');
+      const ansBody = document.getElementById(ansId);
 
-      // Close all other accordion tabs
-      faqHeaders.forEach(otherHeader => {
-        if (otherHeader !== header) {
-          otherHeader.setAttribute('aria-expanded', 'false');
-          const otherContent = document.getElementById(otherHeader.getAttribute('aria-controls'));
-          if (otherContent) {
-            otherContent.setAttribute('aria-hidden', 'true');
-          }
+      // Accordion mode: collapse others
+      faqTriggers.forEach(otherTrigger => {
+        if (otherTrigger !== trigger) {
+          otherTrigger.setAttribute('aria-expanded', 'false');
+          const otherBody = document.getElementById(otherTrigger.getAttribute('aria-controls'));
+          if (otherBody) otherBody.setAttribute('aria-hidden', 'true');
         }
       });
 
       // Toggle current tab
-      header.setAttribute('aria-expanded', !isExpanded);
-      if (content) {
-        content.setAttribute('aria-hidden', isExpanded);
-      }
+      trigger.setAttribute('aria-expanded', !isExpanded);
+      if (ansBody) ansBody.setAttribute('aria-hidden', isExpanded);
     });
   });
 
   // ==========================================================================
-  // 9. FORM VALIDATION & SUBMISSION
+  // 10. FORM ENVELOPE VALIDATION & SUBMISSION
   // ==========================================================================
   const form = document.getElementById('bookingForm');
   const formStatus = document.getElementById('formStatus');
@@ -285,12 +334,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (form) {
     const validateEmail = (email) => {
-      const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-      return re.test(String(email).toLowerCase());
+      return /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/.test(String(email).toLowerCase());
     };
 
     const validatePhone = (phone) => {
-      // 10 digits standard check (allowing spaces, dashes, +91 prefixes)
       const digits = phone.replace(/\D/g, '');
       return digits.length >= 10 && digits.length <= 13;
     };
@@ -309,97 +356,55 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       let isValid = true;
 
-      // Validate name
-      if (!nameInput.value.trim()) {
-        setInvalid(nameInput, nameInput.parentElement);
-        isValid = false;
-      } else {
-        setValid(nameInput, nameInput.parentElement);
-      }
+      if (!nameInput.value.trim()) { setInvalid(nameInput, nameInput.parentElement); isValid = false; }
+      else { setValid(nameInput, nameInput.parentElement); }
 
-      // Validate phone
-      if (!phoneInput.value.trim() || !validatePhone(phoneInput.value)) {
-        setInvalid(phoneInput, phoneInput.parentElement);
-        isValid = false;
-      } else {
-        setValid(phoneInput, phoneInput.parentElement);
-      }
+      if (!phoneInput.value.trim() || !validatePhone(phoneInput.value)) { setInvalid(phoneInput, phoneInput.parentElement); isValid = false; }
+      else { setValid(phoneInput, phoneInput.parentElement); }
 
-      // Validate email
-      if (!emailInput.value.trim() || !validateEmail(emailInput.value)) {
-        setInvalid(emailInput, emailInput.parentElement);
-        isValid = false;
-      } else {
-        setValid(emailInput, emailInput.parentElement);
-      }
+      if (!emailInput.value.trim() || !validateEmail(emailInput.value)) { setInvalid(emailInput, emailInput.parentElement); isValid = false; }
+      else { setValid(emailInput, emailInput.parentElement); }
 
-      // Validate project type selection
-      if (!projectInput.value) {
-        setInvalid(projectInput, projectInput.parentElement.parentElement);
-        isValid = false;
-      } else {
-        setValid(projectInput, projectInput.parentElement.parentElement);
-      }
+      if (!projectInput.value) { setInvalid(projectInput, projectInput.parentElement.parentElement); isValid = false; }
+      else { setValid(projectInput, projectInput.parentElement.parentElement); }
 
-      // Validate budget selection
-      if (!budgetInput.value) {
-        setInvalid(budgetInput, budgetInput.parentElement.parentElement);
-        isValid = false;
-      } else {
-        setValid(budgetInput, budgetInput.parentElement.parentElement);
-      }
+      if (!budgetInput.value) { setInvalid(budgetInput, budgetInput.parentElement.parentElement); isValid = false; }
+      else { setValid(budgetInput, budgetInput.parentElement.parentElement); }
 
-      // Validate message
-      if (!messageInput.value.trim()) {
-        setInvalid(messageInput, messageInput.parentElement);
-        isValid = false;
-      } else {
-        setValid(messageInput, messageInput.parentElement);
-      }
+      if (!messageInput.value.trim()) { setInvalid(messageInput, messageInput.parentElement); isValid = false; }
+      else { setValid(messageInput, messageInput.parentElement); }
 
       if (isValid) {
-        // Submit action
         const submitBtn = document.getElementById('submitBtn');
         const originalText = submitBtn.innerHTML;
         
         submitBtn.disabled = true;
-        submitBtn.innerHTML = `<span>Processing Booking...</span>`;
+        submitBtn.innerHTML = `<span>Processing Tour Request...</span>`;
         
-        // Simulating premium server post delay
         setTimeout(() => {
           formStatus.className = 'form-status-msg success';
-          formStatus.innerHTML = 'Thank you for your enquiry. Our senior design associate will contact you on WhatsApp or phone within 24 hours.';
+          formStatus.innerHTML = 'Booking confirmed. A gallery docent or design associate will message you on WhatsApp shortly.';
           
           form.reset();
           submitBtn.disabled = false;
           submitBtn.innerHTML = originalText;
-
-          // Scroll status message into view smoothly
           formStatus.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }, 1500);
       } else {
-        // Show general error message
         formStatus.className = 'form-status-msg error';
-        formStatus.innerHTML = 'Kindly check the highlighted fields for errors and try again.';
+        formStatus.innerHTML = 'Please check the highlighted fields and try again.';
       }
     });
 
-    // Remove invalid indicators as user types/interacts
-    const inputs = [nameInput, phoneInput, emailInput, messageInput];
-    inputs.forEach(input => {
+    // Remove errors as inputs get populated
+    const textInputs = [nameInput, phoneInput, emailInput, messageInput];
+    textInputs.forEach(input => {
       input.addEventListener('input', () => {
-        if (input.value.trim()) {
-          setValid(input, input.parentElement);
-        }
+        if (input.value.trim()) setValid(input, input.parentElement);
       });
     });
 
-    projectInput.addEventListener('change', () => {
-      setValid(projectInput, projectInput.parentElement.parentElement);
-    });
-
-    budgetInput.addEventListener('change', () => {
-      setValid(budgetInput, budgetInput.parentElement.parentElement);
-    });
+    projectInput.addEventListener('change', () => setValid(projectInput, projectInput.parentElement.parentElement));
+    budgetInput.addEventListener('change', () => setValid(budgetInput, budgetInput.parentElement.parentElement));
   }
 });
