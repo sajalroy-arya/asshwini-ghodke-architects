@@ -1,192 +1,99 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-  /* -----------------------------------------------------------
-     1. Intersection Observer for Scroll Reveals
-     ----------------------------------------------------------- */
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px 0px -10% 0px',
-    threshold: 0
-  };
-
-  const revealObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        // Find if this is a wrapper that contains reveal elements, or the element itself
-        if (entry.target.classList.contains('reveal-text')) {
-          entry.target.classList.add('is-inview');
-        } else if (entry.target.classList.contains('reveal-fade')) {
-          entry.target.classList.add('is-inview');
-        } else if (entry.target.classList.contains('reveal-clip')) {
-          entry.target.classList.add('is-inview');
-        } else {
-          // Check children
-          const children = entry.target.querySelectorAll('.reveal-text, .reveal-fade, .reveal-clip');
-          children.forEach(el => el.classList.add('is-inview'));
-          entry.target.classList.add('is-inview');
-        }
-        observer.unobserve(entry.target);
-      }
+    
+    // --- Mobile Menu Toggle ---
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('open');
+        const icon = menuToggle.querySelector('span');
+        icon.textContent = mobileMenu.classList.contains('open') ? 'close' : 'menu';
     });
-  }, observerOptions);
 
-  // We observe the elements directly, or their parents if we want grouped reveals
-  document.querySelectorAll('.reveal-fade, .reveal-clip, .hero-title').forEach(el => {
-    revealObserver.observe(el);
-  });
-
-  // Specifically trigger hero elements immediately if they are in view
-  setTimeout(() => {
-    document.querySelectorAll('.hero .reveal-text').forEach(el => el.classList.add('is-inview'));
-    document.querySelectorAll('.hero .reveal-fade').forEach(el => el.classList.add('is-inview'));
-    document.querySelectorAll('.hero .reveal-clip').forEach(el => el.classList.add('is-inview'));
-  }, 100);
-
-  /* -----------------------------------------------------------
-     2. Mobile Menu Toggle
-     ----------------------------------------------------------- */
-  const menuBtn = document.getElementById('menuBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const mobileLinks = document.querySelectorAll('.mobile-link');
-  let isMenuOpen = false;
-
-  const toggleMenu = () => {
-    isMenuOpen = !isMenuOpen;
-    if (isMenuOpen) {
-      mobileMenu.classList.add('is-open');
-      document.body.style.overflow = 'hidden';
-    } else {
-      mobileMenu.classList.remove('is-open');
-      document.body.style.overflow = '';
-    }
-  };
-
-  if (menuBtn && mobileMenu) {
-    menuBtn.addEventListener('click', toggleMenu);
-    mobileLinks.forEach(link => {
-      link.addEventListener('click', toggleMenu);
+    // Close mobile menu on link click
+    document.querySelectorAll('.mobile-link').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+            menuToggle.querySelector('span').textContent = 'menu';
+        });
     });
-  }
 
-  /* -----------------------------------------------------------
-     3. Subtle Hero Parallax
-     ----------------------------------------------------------- */
-  const parallaxImg = document.querySelector('.parallax-img');
-  
-  if (parallaxImg && window.innerWidth >= 1024) {
+    // --- Navbar Scroll Effect ---
+    const navbar = document.getElementById('navbar');
+    const mobileCta = document.getElementById('mobile-cta');
+    
     window.addEventListener('scroll', () => {
-      const scrolled = window.scrollY;
-      if (scrolled < window.innerHeight) {
-        // Move image down slightly as we scroll down to create depth
-        parallaxImg.style.transform = `translateY(calc(-10% + ${scrolled * 0.15}px))`;
-      }
-    }, { passive: true });
-  }
-
-  /* -----------------------------------------------------------
-     4. Expertise Hover Image Reveal (Desktop)
-     ----------------------------------------------------------- */
-  const expItems = document.querySelectorAll('.exp-item');
-  const hoverReveal = document.getElementById('hoverReveal');
-  
-  if (hoverReveal && expItems.length > 0 && window.innerWidth >= 1024) {
-    const hoverImg = hoverReveal.querySelector('img');
-    let isHovering = false;
-    let targetX = 0;
-    let targetY = 0;
-    let currentX = 0;
-    let currentY = 0;
-
-    // Linear interpolation for smooth cursor following
-    const lerp = (start, end, factor) => start + (end - start) * factor;
-
-    const animate = () => {
-      if (isHovering) {
-        currentX = lerp(currentX, targetX, 0.1);
-        currentY = lerp(currentY, targetY, 0.1);
-        // Center the image on the cursor
-        const xPos = currentX - hoverReveal.offsetWidth / 2;
-        const yPos = currentY - hoverReveal.offsetHeight / 2;
-        hoverReveal.style.left = `${xPos}px`;
-        hoverReveal.style.top = `${yPos}px`;
-        requestAnimationFrame(animate);
-      }
-    };
-
-    expItems.forEach(item => {
-      item.addEventListener('mouseenter', (e) => {
-        isHovering = true;
-        hoverReveal.classList.add('is-active');
-        const imgSrc = item.getAttribute('data-img');
-        if (hoverImg.src !== imgSrc) {
-          hoverImg.src = imgSrc;
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
         }
-        
-        // Initial set to avoid flying in from 0,0
-        currentX = e.clientX;
-        currentY = e.clientY;
-        targetX = e.clientX;
-        targetY = e.clientY;
-        animate();
-      });
 
-      item.addEventListener('mousemove', (e) => {
-        targetX = e.clientX;
-        targetY = e.clientY;
-      });
-
-      item.addEventListener('mouseleave', () => {
-        isHovering = false;
-        hoverReveal.classList.remove('is-active');
-      });
+        // Show fixed mobile CTA after scrolling past hero
+        if (window.scrollY > 500) {
+            mobileCta.classList.add('visible');
+        } else {
+            mobileCta.classList.remove('visible');
+        }
     });
-  }
 
-  /* -----------------------------------------------------------
-     5. Before/After Transformation Slider
-     ----------------------------------------------------------- */
-  const compareBox = document.getElementById('compareBox');
-  
-  if (compareBox) {
-    const beforeWrapper = compareBox.querySelector('.img-before-wrapper');
-    const dragHandle = document.getElementById('dragHandle');
-    let isSliding = false;
-
-    const slide = (xPos) => {
-      const rect = compareBox.getBoundingClientRect();
-      // Calculate percentage
-      let percent = ((xPos - rect.left) / rect.width) * 100;
-      // Clamp between 0 and 100
-      percent = Math.max(0, Math.min(percent, 100));
-      
-      beforeWrapper.style.width = `${percent}%`;
-      dragHandle.style.left = `${percent}%`;
-    };
-
-    const onMove = (e) => {
-      if (!isSliding) return;
-      const xPos = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
-      slide(xPos);
-    };
-
-    const startSlide = (e) => {
-      isSliding = true;
-      document.body.style.userSelect = 'none'; // prevent text selection
-    };
-
-    const stopSlide = () => {
-      isSliding = false;
-      document.body.style.userSelect = '';
-    };
-
-    compareBox.addEventListener('mousedown', startSlide);
-    compareBox.addEventListener('touchstart', startSlide, {passive: true});
+    // --- Scroll Reveal Animations (Intersection Observer) ---
+    const revealElements = document.querySelectorAll('.reveal-on-scroll');
     
-    window.addEventListener('mousemove', onMove);
-    window.addEventListener('touchmove', onMove, {passive: false});
-    
-    window.addEventListener('mouseup', stopSlide);
-    window.addEventListener('touchend', stopSlide);
-  }
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        root: null,
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+    });
 
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // --- Portfolio Horizontal Slider ---
+    const slider = document.getElementById('work-slider');
+    const nextBtn = document.getElementById('slider-next');
+    const prevBtn = document.getElementById('slider-prev');
+
+    if (slider && nextBtn && prevBtn) {
+        const scrollAmount = window.innerWidth > 768 ? 632 : window.innerWidth * 0.85 + 32;
+
+        nextBtn.addEventListener('click', () => {
+            slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+
+        prevBtn.addEventListener('click', () => {
+            slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+    }
+
+    // --- Consultation Form Submission ---
+    const form = document.getElementById('consultation-form');
+    const successMsg = document.getElementById('form-success');
+
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Simulate form submission
+            const btn = form.querySelector('button[type="submit"]');
+            const originalText = btn.textContent;
+            btn.textContent = 'Processing...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                // Hide form grid
+                form.querySelector('.form-grid').style.display = 'none';
+                btn.style.display = 'none';
+                
+                // Show success message
+                successMsg.classList.add('show');
+            }, 1500);
+        });
+    }
 });
